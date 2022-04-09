@@ -44,7 +44,8 @@ Data must be in the form of a matrix. To convert your data to a matrix, just cal
 	Matrix(<ANY 2d ARRAY>)
 
 or 
-	Matrix(data: <ANY 1D Array>, size: <THE SHAPE>)N
+
+	Matrix(data: <ANY 1D Array>, size: <THE SHAPE>)
 
 
 

@@ -2,14 +2,14 @@
 
 This is a package to make basic neural networks in swift. 
 This is an example of a neural netowrk: 
-
+```swift
 	NeuralNetwork(layers: [
 		DenseLayer(inputSize: 784, outputSize: 128, activation: ReLU()),
 		DenseLayer(inputSize: 128, outputSize: 10, activation: Sigmoid())
 	])
-
+```
 Neural networks cannot be saved. However, layers can. An easy way to do this is: 
-
+```swift
 	let layers = [
 		DenseLayer(inputSize: 784, outputSize: 128, activation: ReLU()),
 		DenseLayer(inputSize: 128, outputSize: 10, activation: ReLU()),
@@ -28,9 +28,9 @@ Neural networks cannot be saved. However, layers can. An easy way to do this is:
 	for (k, v) in layers.enumerated(){
 		v.save(filename: "\(k).json")
 	}
-
+```
 To train a neural network, you call the fit function: 
-
+```swift
 	network.fit(
 		x: <TRAINING DATA>,
 		y: <TESTING DATA>,
@@ -38,21 +38,21 @@ To train a neural network, you call the fit function:
 		learningRate: 0.1,
 		batchSize: 64
 	)
-	
+```	
 Data must be in the form of a matrix. To convert your data to a matrix, just call 
-
+```swift
 	Matrix(<ANY 2d ARRAY>)
-
+```
 or 
-
+```swift
 	Matrix(data: <ANY 1D Array>, size: <THE SHAPE>)
-
+```
 
 
 There are also activation functions. You can make your own 
 activation functions by conforming your activation function to the 
 protocol **ActivationFunction**. As an example, this is ReLU: 
-
+```swift
 	public struct ReLU : ActivationFunction {
 		
 		
@@ -75,5 +75,5 @@ protocol **ActivationFunction**. As an example, this is ReLU:
 		}
 
 	}
-	
+```	
 
